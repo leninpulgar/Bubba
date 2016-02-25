@@ -1,5 +1,14 @@
 <?php
 
+// funcion para contar las letras de cada post en la introduccion en el index
+     function custom_excerpt_length( $length ) {
+      return 20;
+       }
+      add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+ 
+    // funcion para habilitar la opcion para subir imagenes destacadas a cada post
+      add_theme_support( 'post-thumbnails' ); 
+
 add_filter('show_admin_bar', '__return_false');
 
 function bubba_script_enqueue() {
@@ -181,3 +190,10 @@ function wti_custom_nav_menu_widget() {
 }
 
 add_action ( 'widgets_init', 'wti_custom_nav_menu_widget', 1 );
+
+//Relative URL Metaslider (for mobile)
+
+function metaslider_protocol_relative_urls($cropped_url, $orig_url) {
+    return str_replace('http://', '//', $cropped_url);
+}
+add_filter('metaslider_resized_image_url', 'metaslider_protocol_relative_urls', 10, 2);

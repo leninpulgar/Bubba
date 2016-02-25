@@ -20,6 +20,7 @@ html, body{
 
 body{
     background: #eee;
+    overflow-x:hidden;
 }
 
 /**************
@@ -104,26 +105,19 @@ ORBIT CONTAINER (SLIDER)
 ***********************/
 
 .orbit-container{
-    height: 350px;
     margin: 0 0 2rem;
 }
 
-.orbit-caption {
-    background-color: rgba(10, 10, 10, 0.7);
-}
-
-figcaption.orbit-caption{
-    /*width: 35%;*/
+.caption-wrap{
     max-width: 400px;
-    height: 25%;
 }
 
-figcaption.orbit-caption h4{
+.caption h4{
     color: white;
     margin: 0;
 }
 
-figcaption.orbit-caption span{
+.caption span{
     font-size: .9em;
 }
 
@@ -284,6 +278,10 @@ FISHING REPORT
 
 .reportr{
     padding:20px;
+}
+
+.report .post-time{
+    color:rgb(166,153,153);
 }
 
 .report .button {
@@ -453,4 +451,18 @@ hr.style-one {
 
 ul{
     list-style-type: none;
+}
+
+@media screen and (max-width: 39.9375em){
+    
+    .captain{padding-right:0}
+  .panel{
+    border-right: 0px solid rgb(238,238,238);
+}
+
+.panel2{
+    border-left: 0px solid rgb(238,238,238);
+    margin-left: 0;
+}
+   
 }
